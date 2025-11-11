@@ -1,0 +1,13 @@
+import sounddevice as sd
+import soundfile as sf
+
+filename = 'Desktop/Projects/20-seconds-game-countdown-142456.mp3'
+
+# Extract data and sampling rate from file
+data, fs = sf.read(filename, dtype='float32')
+
+# Play the audio
+sd.play(data, fs)
+
+# Wait until the file is done playing
+sd.wait()
